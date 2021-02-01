@@ -1,0 +1,66 @@
+body{
+	background-color: #004456;
+	font-size: 20px;
+}
+
+h2{
+	color: #560000;
+	font-size: 30px;
+}
+
+p a, .blanc a{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+pre span{
+	color: #333;
+}
+
+.header{
+	text-align: center;
+	background-image: url("../images/bkg.jpg");
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	color: #b5b5b5;
+}
+
+.header p{
+	color: #b5b5b5;
+}
+
+.navbar{
+	background: none;
+	border: none;
+	margin-top: -35px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: #b5b5b5;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+	color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover{
+	background: none;
+	color: #00728C;
+}
+
+*{
+	color: #FFFFFF;
+}
+
+.signification img{
+	width: 150px;
+	margin-top: 20px;
+}
+
+.node{
+	margin-top: -20px;
+}
+
+.mongo{
+	margin-top: -10px;
+}

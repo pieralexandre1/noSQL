@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/icon.png">
+    <title>Pier-Alexandre Yale</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+	<div class="jumbotron header">
+		<h1>NoSQL</h1>
+		<p>par Pier-Alexandre Yale</p>
+	</div>
+	<div class="container">
+		<h1 id="signification">Définition</h1>
+		<p><b>NoSQL</b> est un système de gestion de base de données contraire à la SQL de base qui est en base relationnelle où il est nécessaire de respecter un schéma.</p>
+		<div class="row signification text-center">
+		  <div class="col-sm-6 mongo">
+			<img src="images/mongo-logo.png" alt="img_mongodb">
+			<p>Mondo DB est la plus importante base de données No SQL.
+			Elle utilise une structure document store et est open-source.</p>
+			<p><a href="http://docs.mongodb.org/manual/">Cliquez ici</a> pour voir la documentation.</p>
+		  </div>
+		  <div class="col-sm-6 node">
+			<img src="images/nodejs.png" alt="img_nodejs">
+			<p>Node Js est une plateforme construite sur Chrome's JavaScript runtime. Elle utilise
+			une architecture non-bloquante.</p>
+			<p><a href="https://nodejs.org/documentation/">Cliquez ici</a> pour voir la documentation.</p>
+		  </div>
+		</div>
+		<p>NoSQL fonctionne parfaitement avec ces 2 technologies :</p>
+		<ul>
+			<li>MongoDB est un outil pour modéliser des objets dans des environnements comme Node.js</li>
+			<li>Node.js est un environnement web tel que php ou asp.net</li>
+		</ul>
+		<h1>Avantages</h1>
+		<h2>Prototype</h2>
+		<p>NoSQL est reconnu pour bien fonctionner avec Node.js ce qui est un excellent outil pour fabriquer facilement et rapidement des prototypes d'applications.
+		De plus, puisqu'elles sont relativement nouvelles, elles sont également plus puissantes et le nombre de personne qui utilise cet environnement
+		grandit à chaque jour.</p>
+		
+		<h2>Documentation</h2>
+		<p>Les technologies qu'il utilise sont très bien documentées. Sur le site officiel des deux on trouve une documentation très
+		complète sur l'utilisation de ceux-ci. Il y a beaucoup de tutoriels disponibles sur le web. Il est donc très facile de trouver des réponses à vos 
+		questionnements par une simple recherche ou en posant une question sur un forum.</p>
+		
+		<h2>Javascript</h2>
+		<p>Le javascript grimpe en popularité, c'est donc un grand avantage de l'utiliser dans votre application. 
+		C'est un langage puissant qui ne prend pas beaucoup de place, est dynamique et orienté-objet. De plus, grâce à Node.js, l'application web utilise
+		le Javascript autant du côté serveur que du côté client, ce qu'il évite d'avoir à apprendre un nouveau langage.</p> 
+		
+		<h2>Architecture "Non-bloquante"</h2>
+		<p>Un autre avantage d'utiliser le Javascript est son architecture non-bloquante qui permet de faire plusieurs actions sans attendre la fin d'une instruction.</p>
+		
+		<h1>Architecture non-bloquante</h1>
+		<p>Une architecture bloquante signifie que lorsqu'une commande est exécutée, les autres commandes sont bloquées et doivent attendre que 
+		la première soit terminée avant d'être exécutée. Dans cette architecture plusieurs threads sont utilisés. Au contraire, l'architecture non-bloquante
+		utilise un seul thread, puis toutes les exécutions sont envoyées en même temps, alors une fonction de callback est appelée et effectue des actions.</p>
+		
+		Imaginez donc un programme où le rôle est de télécharger un fichier puis de l'afficher. Voici comment on écrirait le code dans un modèle bloquant :
+		
+<pre style="background-color: #161715;color: white;">
+<span style="color: grey;">1.<span><span style="color: white;"> Télécharger fichier<span>
+<span style="color: grey;">2.<span><span style="color: white;"> Afficher fichier<span>
+<span style="color: grey;">3.<span><span style="color: white;"> Faire autre chose<span>
+</pre>
+
+<p>Les actions sont effectuées dans l'ordre un par un. Il faut lire les lignes de haut en bas :
+
+<p>Le programme va télécharger un fichier sur Internet, afficher le fichier à l'utilisateur, puis ensuite le programme peut faire d'autres choses.
+
+<p>Le même code mais sur un modèle non bloquant :
+
+<pre style="background-color: #161715;color: white;">
+<span style="color: grey;">1.<span><span style="color: white;"> Télécharger fichier<span>
+<span style="color: grey;">2.<span><span style="color: white;"> 	Dès que c'est terminé, afficher fichier<span>
+<span style="color: grey;">3.<span><span style="color: white;"> Faire autre chose<span>
+</pre>
+		
+		<br>
+		
+		<p>C'est ce qui rend un modèle non bloquant beaucoup plus efficace que sa contrepartie.</p>
+		
+		<h1>No SQL</h1>
+		<p>Le No SQL est une manière différente de concevoir des bases de données qui est plus rapide et moins restrictive. 
+		Il a été inventé dans les années 2000 pour répondre aux besoins des grosses compagnies comme Google et Ebay. La différence avec les SGBD relationnels (SGBDR) est que le NoSQL utilise 
+		plus le langage SQL et que la structure des données diffère. On y retrouva 3 principaux types de structures : Document store, Key-value 
+		store et Graph database, celle utilisée par Mongo DB est Document store. Chaque "table" est un document dont la structure est écrite en JSON. 
+		Il n'y a aucune règle ou schéma à respecter à part que ça soit un JSON valide.</p>
+		
+		<img src="images/SQL-Sample-Database-Schema.png" alt="img_schema">
+		
+		<p>Au lieu d'être reliées par des clés comme sur l'exemple ci-dessus, les tables sont imbriquées une dans l'autre:</p>
+		
+<pre style="background-color: #161715;color: white;">
+{
+	"Employe": {
+		"ID": "1",
+		"first_name": "Martin",
+		"last_name": "Matt",
+		"email": "MartinMatt@gmail.com",
+		"phone_number": "683-666-7777",
+		"hire_date": 1525196223,
+		"Jobs": {
+			"title": "CEO",
+			"min_salary": 50000,
+			"max_salary": 70000
+		},
+		"salary": 56000,
+		"departement": {
+			"name": "Wow"
+		}
+	}
+}
+</pre>
+		
+		<p>Supposons que vous souhaitez maintenant ajouter un rendez-vous à cet utilisateur:</p>
+<pre style="background-color: #161715;color: white;">
+{
+	"Employe": {
+		"ID": "1",
+		"first_name": "Martin",
+		"last_name": "Matt",
+		"email": "MartinMatt@gmail.com",
+		"phone_number": "683-666-7777",
+		"hire_date": 1525196223,
+		"Jobs": {
+			"title": "CEO",
+			"min_salary": 50000,
+			"max_salary": 70000
+		},
+		"salary": 56000,
+		"departement": {
+			"name": "Wow"
+		},
+		"Evenement": {
+			"name": "party",
+			"date_debut": 1525696223,
+			"date_fin": 1525706223
+		}
+	}
+}
+</pre>
+		<p>Contrairement aux SGBDR traditionnels où il aurait fallu créer une nouvelle table à part et la relier avec la précédente, en nosql on ajoute
+		la nouvelle table à l'intérieur même de la première. Cela fait que la table département, par exemple, n'est pas réutilisable comme c'était le cas 
+		précédemment mais cela permet d'avoir plus rapidement accès à toute l'information de l'employé avec seulement sont ID. De plus, rajouter plus de rendez-vous est aussi simple que
+		l'objet évènement devient un array.</p>
+		
+<pre style="background-color: #161715;color: white;">
+{
+	"Employe": {
+		"ID": "1",
+		"first_name": "Martin",
+		"last_name": "Matt",
+		"email": "MartinMatt@gmail.com",
+		"phone_number": "683-666-7777",
+		"hire_date": 1525196223,
+		"Jobs": {
+			"title": "CEO",
+			"min_salary": 50000,
+			"max_salary": 70000
+		},
+		"salary": 56000,
+		"departement": {
+			"name": "Wow"
+		},
+		"Evenement": [{
+			"name": "party",
+			"date_debut": 1525696223,
+			"date_fin": 1525706223
+		},{
+			"name": "rencontre shareholder",
+			"date_debut": 1526696223,
+			"date_fin": 1526706223
+		}]
+	}
+}
+</pre>
+		
+		<p>La technologie "No SQL" de Mongo DB permet également de rapidement et facilement changer ou modifier la structure des données sans se préoccuper 
+		de la migration, ce qui est très pratique lorsque les spécifications du programme ne sont pas tout à fait déterminées. Il est donc avantageux qu'il n'y a pas de schéma à respecter.</p>
+		
+		<h1>Service</h1>
+		<br>
+		<h1>MongoDb Atlas</h1>
+		<br>
+		<p>De plus, MongoDB offre aussi un service en ligne appelé MongoDb Atlas, ce qui permet d'éviter d'avoir une base de données locale sur un serveur et à la place avoir la base de données sur le cloud.</p> 
+		<img src="images/live-import.png" alt="img_atlas">
+		<br>
+		<p>Il offre de multiples options pour héberger la base de données telle que le backup, taille et la région. Il offre gratuitement jusqu'a 500mb de stockage pour éssayer.</p>
+		<img src="images/option_atlas.jpg" alt="img_option_atlas">
+		
+		<br>
+		
+		<h1>Opération</h1>
+		
+		
+		
+		<div style="background-color: #161715;color: white;">
+		
+		<p>Exemple d'opération dans MongoDB qui fonctionne pareillement que sur local ou cloud.</p>
+		
+		<p>Pour débuter, on peut insérer un document dans une collection (ce qui est équivalent d'une table) mais bien évidemment, il n'y a pas de schéma ou règle à suivre.
+		Un id unique est automatiquement créé par document.</p>
+		
+		
+		<img src="images/insert.svg" alt="img_insert">
+		
+		<p>Pour trouver des documents dans une collection est aussi simple que de simplement écrire ce que l'on veut retrouver dans le document.
+		Par exemple: On veut avoir tous les documents où l'âge est de 18, donc on ferait en JSON 'db.users.find( { age: 18 } )'.
+		On utilise ici une expression $gt (plus grand) pour trouver seulement les documents avec âge plus grand que 18. On peut aussi donner des arguments supplémentaires,
+		par exemple, la projection est par quel ordre qu'on veut que l'array de documents qu'on reçoit arrive, nom alphabétique, puis address ce qui est l'équivalent du
+		sort sur SQL. Il est aussi possible de donner encore plus d'argument par exemple limiter à 5 résultats reçus, ce qui pourrait être très utile si on veut seulement 5 documents sur 100000 documents,
+		ce qui évite de gaspiller des ressources serveur.</p>
+		
+		<img src="images/find.svg" alt="img_find">
+		
+		<p>Pour mettre à jour des documents est pratiquement similaire. Le premier argument sert à trouver les documents qu'on veut changer et le second ce qu'on veut remplacer,
+		on met l'expression $set ici si on ne veut pas remplacer complètement le document et seulement changer une donnée dans les documents.</p>
+		
+		<img src="images/update.svg" alt="img_update">
+		
+		<p>Exemple :</p>
+		
+		<pre style="background-color: #161715;color: white;">
+{
+	"Users": {
+		"ID": "1",
+		"first_name": "Martin",
+		"last_name": "Matt",
+		"age": 48,
+		"status": "cool"
+	}
+}
+</pre>
+
+		<p>Sans le $set deviendra</p>
+
+<pre style="background-color: #161715;color: white;">
+{
+	"Users": {
+		"ID": "1",
+		"status": "reject"
+	}
+}
+</pre>
+
+		<p>Avec le $set deviendra</p>
+		
+<pre style="background-color: #161715;color: white;">
+{
+	"Users": {
+		"ID": "1",
+		"first_name": "Martin",
+		"last_name": "Matt",
+		"age": 48,
+		"status": "reject"
+	}
+}
+</pre>
+		
+		<p>Alors, on peut demander de simplement supprimer tous les documents où le status est reject.</p>
+		
+		<img src="images/delete.svg" alt="img_delete">
+		
+		<p>Les opérations sont donc très simples à utiliser car tout est fait en type JSON. De plus, il y a des opérations plus complexes pour avoir des résultats plus précis
+		tels que aggregate, ce qui permet de séparer les opérations une à une pour arriver à un résultat voulu comme la somme par id.</p>
+		
+		
+		<img src="images/aggregate.svg" alt="img_aggregate">
+		
+		</div>
+		
+		<h1>Références</h1>
+		<p><ul class="blanc">
+			<li><a href="https://openclassrooms.com/courses/maitrisez-les-bases-de-donnees-nosql">https://openclassrooms.com/courses/maitrisez-les-bases-de-donnees-nosql</a></li>
+			<li><a href="https://www.mongodb.com/nosql-explained">https://www.mongodb.com/nosql-explained</a></li>
+			<li><a href="https://nodejs.org/en/about/">https://nodejs.org/en/about/</a></li>
+			<li><a href="https://docs.mongodb.com/manual/crud/">https://docs.mongodb.com/manual/crud/</a></li>
+		</ul></p>
+	</div>
+  </body>
+</html>
